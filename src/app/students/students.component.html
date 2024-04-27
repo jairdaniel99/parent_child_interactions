@@ -1,3 +1,6 @@
 <!-- Use property binding to pass student list from parent to child -->
 <!-- $event is a reserve keyword that captures the event object and the data passed from the child component -->
-<undergrads (cryEvent)="text = $event" [studentList]="students"></undergrads>
+<undergrads
+  (studentDelete)="deleteStudent($event)"
+  [studentList]="undergradStudents"
+></undergrads>

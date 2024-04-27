@@ -10,10 +10,9 @@ export class UndergradsComponent {
   // child component accepts parent component via input keyword
   @Input() public studentList: any;
   // child component emits event to parent component via output decorator
-  @Output() public cryEvent = new EventEmitter();
+  @Output() public studentDelete = new EventEmitter();
 
-  cryOutLoud() {
-    //emit is a method that emits an event to parent component and can also pass data as an argument
-    this.cryEvent.emit('I am crying out loud.');
+  delete(name: string) {
+    this.studentList.emit(name);
   }
 }

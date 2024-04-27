@@ -20,4 +20,16 @@ export class StudentsComponent {
     // return new array of students based on level property conditional check
     return this.students.filter((student) => student.level === 'undergrad');
   }
+
+  // delete student
+  deleteStudent(studentName: string) {
+    // findIndex will return the index of the student matching the studentName OR -1 if not found
+    let index = this.students.findIndex(
+      (student) => student.name === studentName
+    );
+    this.students.splice(
+      index, // find the index of the student to delete based on name
+      1 // delete one instance
+    );
+  }
 }
