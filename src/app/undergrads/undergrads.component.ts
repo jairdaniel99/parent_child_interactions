@@ -13,6 +13,6 @@ export class UndergradsComponent {
   @Output() public studentDelete = new EventEmitter();
 
   delete(name: string) {
-    this.studentList.emit(name);
+    this.studentDelete.emit(name);
   }
 }
