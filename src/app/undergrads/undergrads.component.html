@@ -3,6 +3,9 @@
   <li *ngFor="let student of studentList">
     {{ student.name }}
     <button (click)="delete(student.name)">Delete</button>
+    <a routerLinkActive="active" [routerLink]="['/students', student.name]">
+      <button>View</button>
+    </a>
   </li>
 </ul>
 <!-- use event binding to trigger cryOutLoud method in child component -->
