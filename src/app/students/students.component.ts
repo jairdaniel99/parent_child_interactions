@@ -6,13 +6,18 @@ import { Component } from '@angular/core';
   styleUrl: './students.component.css',
 })
 export class StudentsComponent {
-  text = 'Sleeping.';
   // we have a mixture of undergrad and postgrad students
+  text: undefined | string;
   students = [
     { name: 'John', level: 'undergrad' },
     { name: 'Jane', level: 'postgrad' },
     { name: 'Jim', level: 'undergrad' },
   ];
+
+  ngOnInit() {
+    console.log();
+    this.text = 'Students list';
+  }
   // we can call functions before creating them like this, becvause when javascript renders the code, the functions will be MOVED to the top.
   public undergradStudents = this.getUndergradStudents();
   // get undergrad students
