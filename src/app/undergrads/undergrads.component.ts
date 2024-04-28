@@ -46,7 +46,7 @@ export class UndergradsComponent implements OnChanges {
   ngOnDestroy() {
     console.log('ngOnDestroy: UndergradComponent is destroyed');
   }
-  delete(name: string) {
-    this.studentDelete.emit(name);
+  delete(id: number) {
+    this.studentDelete.emit(id);
   }
 }

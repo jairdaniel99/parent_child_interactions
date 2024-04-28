@@ -7,6 +7,7 @@ import { StudentsComponent } from './students/students.component';
 import { UndergradsComponent } from './undergrads/undergrads.component';
 import { HomeComponent } from './home/home.component';
 import { StudentInfoComponent } from './student-info/student-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { StudentInfoComponent } from './student-info/student-info.component';
     StudentsComponent,
     UndergradsComponent,
     HomeComponent,
-    StudentInfoComponent
+    StudentInfoComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
