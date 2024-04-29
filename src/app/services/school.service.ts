@@ -17,7 +17,9 @@ export class SchoolService {
   getStudents(): Observable<Student[]> {
     return this.http.get<Student[]>(this._schoolUrl + '/students');
   }
-
+  postStudents(student: Student): Observable<Student[]> {
+    return this.http.post<Student[]>(this._schoolUrl + '/students', student);
+  }
   // delete student from the API
   deleteStudent(id: number): Observable<Student[]> {
     // <Student[]> is the generic type for the delete method specifying what we expect the response to be

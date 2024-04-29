@@ -1,0 +1,74 @@
+<p>student-info-form works!</p>
+<h1>Reactive Forms</h1>
+<!-- We need to bind our component form to the template 
+form using the formGroup directive -->
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="exampleInputName">Email address</label>
+    <!-- We can use formControlName directive to bind formControls to input fields -->
+    <input
+      type="text"
+      formControlName="name"
+      class="form-control"
+      id="exampleInputName"
+      aria-describedby="emailHelp"
+      placeholder="Enter Name"
+    />
+    <div
+      *ngIf="reactiveForm.get('name')?.touched && reactiveForm.get('name')?.errors?.['required']"
+      class="text-danger"
+    >
+      Name is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputgrade">Grade</label>
+    <input
+      type="number"
+      formControlName="grade"
+      class="form-control"
+      id="exampleInputgrade"
+      placeholder="Grade"
+    />
+    <div
+      *ngIf="reactiveForm.get('grade')?.touched && reactiveForm.get('grade')?.errors?.['required']"
+      class="text-danger"
+    >
+      Grade is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputAge">Age</label>
+    <input
+      type="number"
+      formControlName="age"
+      class="form-control"
+      id="exampleInputAge"
+      placeholder="Age"
+    />
+    <div
+      *ngIf="reactiveForm.get('age')?.touched && reactiveForm.get('age')?.errors?.['required']"
+      class="text-danger"
+    >
+      Age is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputLevel">level</label>
+    <input
+      type="text"
+      formControlName="level"
+      class="form-control"
+      id="exampleInputLevel"
+      placeholder="level"
+    />
+    <div
+      *ngIf="reactiveForm.get('level')?.touched && reactiveForm.get('level')?.errors?.['required']"
+      class="text-danger"
+    >
+      Level is required.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

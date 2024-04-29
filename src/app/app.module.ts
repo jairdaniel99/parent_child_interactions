@@ -8,6 +8,8 @@ import { UndergradsComponent } from './undergrads/undergrads.component';
 import { HomeComponent } from './home/home.component';
 import { StudentInfoComponent } from './student-info/student-info.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StudentInfoFormComponent } from './student-info-form/student-info-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,14 @@ import { HttpClientModule } from '@angular/common/http';
     UndergradsComponent,
     HomeComponent,
     StudentInfoComponent,
+    StudentInfoFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
