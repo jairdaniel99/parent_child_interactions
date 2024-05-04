@@ -3,7 +3,7 @@
   <li *ngFor="let student of studentList">
     {{ student.name }}
     <button (click)="delete(student.id)">Delete</button>
-    <a routerLinkActive="active" [routerLink]="['/students', student.name]">
+    <a routerLinkActive="active" [routerLink]="['/students', student.id]">
       <button>View</button>
     </a>
   </li>

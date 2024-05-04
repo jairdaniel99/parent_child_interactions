@@ -17,6 +17,11 @@ export class SchoolService {
   getStudents(): Observable<Student[]> {
     return this.http.get<Student[]>(this._schoolUrl + '/students');
   }
+
+  getStudent(id: number): Observable<Student[]> {
+    return this.http.get<Student[]>(this._schoolUrl + '/students/' + id);
+  }
+
   postStudents(student: Student): Observable<Student[]> {
     return this.http.post<Student[]>(this._schoolUrl + '/students', student);
   }
@@ -24,5 +29,11 @@ export class SchoolService {
   deleteStudent(id: number): Observable<Student[]> {
     // <Student[]> is the generic type for the delete method specifying what we expect the response to be
     return this.http.delete<Student[]>(this._schoolUrl + '/students/' + id);
+  }
+  putStudents(id: number, updatedStudent: Student) {
+    return this.http.patch<Student[]>(
+      this._schoolUrl + '/students/' + id,
+      updatedStudent
+    );
   }
 }
